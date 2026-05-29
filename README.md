@@ -1,5 +1,7 @@
 # Harper Prerender — HTML + Markdown Cache with Fermyon Fallback
 
+[![CI](https://github.com/JGinSJ/harper-prerender-html-md-cache-fermyon-fallback/actions/workflows/ci.yml/badge.svg)](https://github.com/JGinSJ/harper-prerender-html-md-cache-fermyon-fallback/actions/workflows/ci.yml)
+
 An Edge-native pipeline that intercepts traffic at the Akamai edge and serves
 **prerendered HTML to humans and SEO crawlers** and **clean Markdown to AI
 crawlers** — including for **client-side-rendered (CSR) pages**, without touching
