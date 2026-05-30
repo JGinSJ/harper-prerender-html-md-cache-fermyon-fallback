@@ -88,9 +88,35 @@ Full design, cache schema, renderer contract, and production deploy:
 
 ---
 
-## Quick start (local)
+## Run it locally
 
-Requires the Docker daemon running.
+**Prerequisites:** [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+(running) and Node 18+. On a fresh Mac:
+
+```bash
+brew install --cask docker      # then launch Docker Desktop and wait for "running"
+brew install node git
+```
+
+**One command** — installs deps, builds + starts the stack (origin + HarperDB +
+Puppeteer renderer), then runs the demo UI on http://localhost:8090:
+
+```bash
+git clone https://github.com/JGinSJ/harper-prerender-html-md-cache-fermyon-fallback.git
+cd harper-prerender-html-md-cache-fermyon-fallback
+./dev.sh          # Ctrl+C stops the UI; the stack keeps running
+./dev.sh down     # stop the Docker stack
+```
+
+> First run pulls the HarperDB image and builds the renderer (downloads Chrome —
+> a few minutes, once). A fresh clone does **not** include the scraped enterprise
+> fixtures (gitignored); use the **Render Lab** (any public URL), the **Aether One
+> Pro** example, or the CLI probe below for self-contained demos. Local data is
+> ephemeral — `./dev.sh down` clears cached renders.
+
+## Quick start (manual)
+
+Requires the Docker daemon running. (`./dev.sh` automates all of this.)
 
 ```bash
 # Component deps (so the docker bind-mount is self-contained)
